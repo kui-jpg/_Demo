@@ -7,6 +7,8 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <Button Content="test" HorizontalAlignment="Left" Margin="302,161,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Content="clear" HorizontalAlignment="Left" Margin="432,180,0,0" VerticalAlignment="Top" Width="75"/>
+
     </Grid>
 </Window>
