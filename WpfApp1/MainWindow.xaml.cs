@@ -15,6 +15,9 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using log4net;
 using WpfApp1.Utility;
+using log4net.Core;
+using log4net.Layout;
+using System.Reflection;
 
 namespace WpfApp1
 {
@@ -28,22 +31,29 @@ namespace WpfApp1
             InitializeComponent();
            
         }
+
+        public static readonly log4net.ILog log = log4net.LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Init();
+            log.Info("这是用info写入的");
+            LogHelper.Debug("aaaaa");
+           // Init();
+
         }
 
         private void Init()
         {
             //读取XML配置信息
             XMLHelper.ReadXml();
+
             //日志清除
             Task.Factory.StartNew(() =>
             {
                 DirectoryInfo di = new DirectoryInfo(Parameter.LogFilePath);
                 if (!di.Exists)
                     di.Create();
-                FileInfo[] fi = di.GetFiles("Demo_*.log");
+                FileInfo[] fi = di.GetFiles("Demo_*.txt");
                 DateTime dateTime = DateTime.Now;
                 foreach (FileInfo info in fi)
                 {

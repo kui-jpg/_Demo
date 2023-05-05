@@ -21,8 +21,7 @@ namespace WpfApp1.Utility
                 Parameter.LogLevel = (LogLevelEnum)Enum.Parse(typeof(LogLevelEnum), node.SelectSingleNode("LogLevel").InnerText);
                 Parameter.LogFilePath = node.SelectSingleNode("LogFilePath").InnerText;
                 Parameter.LogFileExistDay = int.Parse(node.SelectSingleNode("LogFileExistDay").InnerText);
-
-                LogHelper.Debug("XML文件读取成功。");
+                
             }
             catch (Exception ex)
             {
