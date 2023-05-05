@@ -23,6 +23,7 @@ namespace VSDemo
         public MainWindow()
         {
             InitializeComponent();
+            Init();
         }
         public void Init()
         {
