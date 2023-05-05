@@ -24,5 +24,9 @@ namespace VSDemo
         {
             InitializeComponent();
         }
+        public void Init()
+        {
+            btn1.Content = "测试";
+        }
     }
 }
